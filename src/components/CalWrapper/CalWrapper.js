@@ -1,4 +1,5 @@
 import Button from "../../common/Button";
+import './CalWrapper.css'
 
 const CalWrapper = (props) => {
 
@@ -18,11 +19,15 @@ const CalWrapper = (props) => {
 
     console.log("allBttton",allBttton)
   return (
-    <div>    
-      
+    <div className = "main-cal">
+
+      <div className = "bt-name">
       {allBttton}
-      {allOperationBt}
-      
+      </div>
+      <div className = "op-name">     
+       {allOperationBt}
+      </div>
+
     </div>
   );
 };

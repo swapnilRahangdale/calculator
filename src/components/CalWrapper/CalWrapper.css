@@ -1,0 +1,20 @@
+.main-cal{
+margin-left: 20px;
+
+}
+
+.bt-name{
+    display: flex;
+    width: 400px;
+    height: 100px;
+    justify-content: space-around;
+}
+
+.op-name{
+
+    display: flex;
+    width: 200px;
+    height: 100px;
+    justify-content: space-around;
+   
+}
