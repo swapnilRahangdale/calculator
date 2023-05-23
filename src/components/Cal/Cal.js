@@ -69,14 +69,36 @@ const Cal = () => {
         btFun: () =>{
           setCurrentOperation('+');
           setOperationValue(inputVal1);
-          setOperationValue(0);
+          setInputVal1(0);
         }
+      },
+
+      {
+         value: '=',
+         btFun: () => {
+          if(currentOperation === '+'){
+
+            setInputVal1((prevValue) => {
+              return prevValue + operationValue
+            })  
+
+          }else if(currentOperation === '-'){
+         }
+
+        
+
       }
-    ]
+    }
+    ];
+     
+    
 
   return (
     <div>
-      <p>This is calculator.    Enter No. {inputVal1}</p>
+      <p> This is calculator {inputVal1}</p>
+      <p> {operationValue}{currentOperation}  </p>
+     
+      
         <CalWrapper allBtArr = {allBtArr} operationArr = {operationArr}/>
     </div>
   );
