@@ -1,12 +1,13 @@
 import {useState} from "react";
 import CalWrapper from "../CalWrapper/CalWrapper";
+import './Cal.css'
 
 const Cal = () => {
 
   const [inputVal1, setInputVal1] = useState(0);
   const [operationValue, setOperationValue] = useState(0);
   const [currentOperation, setCurrentOperation] = useState('');
-
+    
     const allBtArr = [
         
         {value : 0, btFun: () => {
@@ -61,8 +62,11 @@ const Cal = () => {
           
           setInputVal1(preValue => parseInt (preValue.toString() + 9));
         }},
+
+        
         
     ];
+    
 
     const operationArr = [
       {
@@ -95,12 +99,12 @@ const Cal = () => {
         },
 
         {
-             value: '/',
-             brFun: () =>{
-              setCurrentOperation('/');
-              setOperationValue(inputVal1);
-              setInputVal1(0)
-             }
+          value: '/',
+          btFun: () =>{
+            setCurrentOperation('/');
+            setOperationValue(inputVal1);
+            setInputVal1(0);
+          }
 
         },
 
@@ -128,11 +132,10 @@ const Cal = () => {
           })
 
          } else if(currentOperation === '/'){
-           
-          setInputVal1((prevValue) =>{
-            return operationValue / prevValue
 
-          })
+          setInputVal1((prevValue) => {
+            return  operationValue / prevValue
+          })  
 
          }
         
@@ -145,8 +148,8 @@ const Cal = () => {
 
   return (
     <div>
-      <p> This is calculator {inputVal1}</p>
-      <p> {operationValue}{currentOperation}  </p>
+      <p id = "p1"> This is calculator {inputVal1}</p>
+      <p id = "p2"> {operationValue}{currentOperation}  </p>
      
       
         <CalWrapper allBtArr = {allBtArr} operationArr = {operationArr}/>
